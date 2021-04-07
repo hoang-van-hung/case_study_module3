@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateCustomerRequest;
 use App\Http\Services\CustomerService;
 use App\Http\Services\ProductService;
 use App\Models\Bill;
@@ -79,7 +80,7 @@ class CartController extends Controller
         return view('frontend.cart.checkout',compact('cart'));
     }
 
-    function checkOut(Request $request) {
+    function checkOut(CreateCustomerRequest $request) {
         $cart = session()->get('cart');
 
         DB::beginTransaction();

@@ -3,7 +3,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreatUserRequest;
+use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\testRequest;
 use App\Http\Services\UserService;
 use App\Http\Services\RoleService;
 use App\Models\Group;
@@ -35,7 +36,7 @@ class UserController extends Controller
         return view('admin.users.add', compact( 'roles'));
     }
 
-    function store(Request $request) {
+    function store(CreateUserRequest $request) {
         $this->userService->store($request);
         return redirect()->route('users.index');
     }

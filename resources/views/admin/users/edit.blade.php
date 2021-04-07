@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" value="{{ $user->email }}" name="email" class="form-control">
+                    <input type="email" value="{{ $user->email }}" name="email" class="form-control" disabled>
                 </div>
                 <div class="form-group">
                     <label>Role</label>

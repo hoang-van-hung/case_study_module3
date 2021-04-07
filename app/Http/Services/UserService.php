@@ -31,8 +31,6 @@ class UserService extends BaseService
     function store($request) {
         $user = new User();
         $user->fill($request->all());
-        $path = $this->updateLoadFile($request, 'image', 'Image');
-        $user->image = $path;
         $roles = $request->role_id;
         $user->password = Hash::make($request->password);
 
@@ -44,8 +42,6 @@ class UserService extends BaseService
         $user = $this->userRepo->findById($id);
         $user->fill($request->all());
         $roles = $request->role_id;
-        /*$path = $this->updateLoadFile($request, 'image', 'Image');
-        $user->image = $path;*/
         $this->userRepo->store($user, $roles);
     }
 

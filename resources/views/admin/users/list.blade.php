@@ -7,7 +7,7 @@
 
     <div class="card mb-4">
         <div class="card-header">
-            <a href="{{route('customer.create')}}" class="btn btn-success float-right m-3">ADD USER</a>
+            <a href="{{route('users.create')}}" class="btn btn-success float-right m-3">ADD USER</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">

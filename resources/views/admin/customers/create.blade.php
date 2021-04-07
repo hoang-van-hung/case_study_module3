@@ -14,20 +14,32 @@
                 @csrf
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="name" class="form-control @error('name') border-danger  @enderror">
                 </div>
+                @error('name')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
                 <div class="form-group">
                     <label>Address</label>
-                    <input type="text" name="address" class="form-control">
+                    <input type="text" name="address" class="form-control @error('address') border-danger  @enderror">
                 </div>
+                @error('address')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
                 <div class="form-group">
                     <label>Phone</label>
-                    <input type="text" name="phone" class="form-control">
+                    <input type="text" name="phone" class="form-control @error('phone') border-danger  @enderror">
                 </div>
+                @error('phone')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" name="email" class="form-control">
+                    <input type="email" name="email" class="form-control @error('email') border-danger  @enderror">
                 </div>
+                @error('email')
+                <p class="text-danger">{{ $message }}</p>
+                @enderror
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

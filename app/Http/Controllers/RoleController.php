@@ -20,7 +20,7 @@ class RoleController extends Controller
     public function index()
     {
         $roles = $this->roleService->getAll();
-        return view('admin.role.list', compact('roles'));
+        return view('admin.roles.list', compact('roles'));
 
     }
     public function getById($id)
@@ -31,24 +31,24 @@ class RoleController extends Controller
     function create()
     {
         $permissionParent = $this->permission->where('parent_id',0)->get();
-        return view('admin.role.create', compact('permissionParent'));
+        return view('admin.roles.create', compact('permissionParent'));
     }
 
     function store(Request $request)
     {
         $this->roleService->store($request);
-        return redirect()->route('admin.role.list');
+        return redirect()->route('admin.roles.list');
     }
     function edit($id)
     {
         $role = $this->roleService->getById($id);
-        return view('admin.role.edit',compact('role'));
+        return view('admin.roles.edit',compact('role'));
     }
 
     function update($id,Request $request)
     {
         $this->roleService->update($id,$request);
-        return redirect()->route('admin.role.list');
+        return redirect()->route('admin.roles.list');
 
     }
 

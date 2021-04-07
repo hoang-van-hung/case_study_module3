@@ -1,12 +1,12 @@
 <?php
 
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[ProductController::class,'show'])->name('product.show');
+Route::get('/products/{id}/detail',[ProductController::class,'getById'])->name('product.detail');
 
 Auth::routes();
 
@@ -53,12 +54,23 @@ Route::prefix('admin')->group(function () {
         Route::get('/{id}/delete',[CustomerController::class,'delete'])->name('customer.delete');
     });
     Route::prefix('roles')->group(function () {
-        Route::get('',[RoleController::class,'index'])->name('role.index');
-        Route::get('create',[RoleController::class,'create'])->name('role.create');
-        Route::post('create',[RoleController::class,'store'])->name('role.store');
-        Route::get('/{id}/edit',[RoleController::class,'edit'])->name('role.edit');
-        Route::post('/{id}/edit',[RoleController::class,'update'])->name('role.update');
-        Route::get('/{id}/delete',[RoleController::class,'delete'])->name('role.delete');
+        Route::get('',[RoleController::class,'index'])->name('roles.index');
+        Route::get('create',[RoleController::class,'create'])->name('roles.create');
+        Route::post('create',[RoleController::class,'store'])->name('roles.store');
+        Route::get('/{id}/edit',[RoleController::class,'edit'])->name('roles.edit');
+        Route::post('/{id}/edit',[RoleController::class,'update'])->name('roles.update');
+        Route::get('/{id}/delete',[RoleController::class,'delete'])->name('roles.delete');
+    });
+
+    Route::prefix('bills')->group(function () {
+       Route::get('',[BillController::class,'index'])->name('bills.index');
+       Route::get('{id}/detail',[BillController::class,'showDetail'])->name('bill.detail');
+       Route::get('create',[BillController::class,'create'])->name('bills.create');
+
+    });
+
+    Route::prefix('statuses')->group(function () {
+        Route::get('',[\App\Http\Controllers\StatusController::class,'index'])->name('statuses.index');
     });
 
 });

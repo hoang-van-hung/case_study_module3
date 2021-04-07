@@ -44,7 +44,7 @@
                             <td>{{ $product->type }}</td>
                             <td>{!! $product->description !!}</td>
                             <td><img src="{{ asset('storage/' . $product->img) }}" width="100" alt=""></td>
-                            <td>{{ $product->category_id }}</td>
+                            <td>{{ $product->category->name }}</td>
                             <td>{{ $product->price }}</td>
 
                             <td>

@@ -45,32 +45,32 @@ class PermissionSeeder extends Seeder
         $permission->save();
 
         $permission =  new Permission();
-        $permission->name ='Bill';
-        $permission->description ='Bill';
+        $permission->name ='bills';
+        $permission->description ='bills';
         $permission->parent_id= 0;
         $permission->save();
 
         $permission =  new Permission();
-        $permission->name ='Bill List';
-        $permission->description ='Bill List';
+        $permission->name ='bills List';
+        $permission->description ='bills List';
         $permission->parent_id= 6;
         $permission->save();
 
         $permission =  new Permission();
-        $permission->name ='Bill Add';
-        $permission->description ='Bill Add';
+        $permission->name ='bills Add';
+        $permission->description ='bills Add';
         $permission->parent_id= 6;
         $permission->save();
 
         $permission =  new Permission();
-        $permission->name ='Bill Update';
-        $permission->description ='Bill Update';
+        $permission->name ='bills Update';
+        $permission->description ='bills Update';
         $permission->parent_id= 6;
         $permission->save();
 
         $permission =  new Permission();
-        $permission->name ='Bill Delete';
-        $permission->description ='Bill Delete';
+        $permission->name ='bills Delete';
+        $permission->description ='bills Delete';
         $permission->parent_id= 6;
         $permission->save();
     }

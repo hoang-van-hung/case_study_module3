@@ -1,5 +1,6 @@
-@extends('frontend.test')
+@extends('frontend.master')
 @section('content')
+    <h2 class="section-title"><strong>List Cart</strong></h2>
     <div class="single-product-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
@@ -52,18 +53,15 @@
                                         <td class="product-name">
                                             {{ $item['products']->name }}
                                         </td>
-
                                         <td class="product-price">
                                             {{ $item['products']->price }}
                                         </td>
-
                                         <td class="product-quantity">
                                             <div class="quantity buttons_added">
-                                                <input name="quantity_product[{{$key}}]" data-id="{{$key}}"
-                                                       type="number" value="{{ $item['totalQty'] }}" class="quantity_product" min="0" step="1">
+                                                <input min="0" step="1" name="quantity_product[{{$key}}]" data-id="{{$key}}"
+                                                       type="number" value="{{ $item['totalQty'] }}" class="quantity_product" >
                                             </div>
                                         </td>
-
                                         <td class="product-subtotal">
                                             {{ $item['totalPrice'] }}
                                         </td>
@@ -73,7 +71,6 @@
                                         <td colspan="3">
                                             <h4>TotalMoney Cart: {{ number_format($cart->totalPrice, 0, '.','.') }}</h4>
                                         </td>
-
                                     </tr>
                                     </tbody>
                                 </table>

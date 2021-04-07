@@ -31,7 +31,11 @@ class ProductController extends Controller
 
     public function getById($id)
     {
-        return $this->productSer->getById($id);
+        $products = $this->productSer->getAll();
+        $product= $this->productSer->getById($id);
+
+        return view('frontend.product_detail.detail',compact('products','product'));
+
     }
 
     public function create()

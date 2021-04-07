@@ -11,12 +11,14 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li class="active"><a href="{{route('product.show')}}">Home</a></li>
+
+                    <li><a href="#">Iphones</a></li>
+                    <li><a href="#">Ipad</a></li>
+                    <li><a href="#">SamSung</a></li>
+                    <li><a href="#">Phụ kiện</a></li>
                     <li><a href="{{ route('cart.index') }}">Cart({{ session()->get('cart')->totalQty ?? "0"}})</a></li>
                     <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Others</a></li>
-                    <li><a href="#">Contact</a></li>
                     <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a></li>
                     <li>
                         @if (Route::has('login'))
@@ -38,3 +40,8 @@
         </div>
     </div>
 </div>
+<style>
+    .mainmenu-area {
+        padding-top: 30px;
+    }
+</style>

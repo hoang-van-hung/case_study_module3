@@ -10,7 +10,7 @@
             Featured
         </div>
         <div class="card-body">
-            <form method="post" action="{{route('role.store')}}" enctype="multipart/form-data" style="width: 100%">
+            <form method="post" action="{{route('roles.store')}}" enctype="multipart/form-data" style="width: 100%">
                 @csrf
                 <div class="form-group">
                     <label>Name</label>

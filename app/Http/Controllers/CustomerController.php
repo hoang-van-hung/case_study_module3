@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateCustomerRequest;
 use App\Http\Services\CustomerService;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,7 @@ class CustomerController extends Controller
         return view('admin.customers.create');
     }
 
-    function store(Request $request)
+    function store(CreateCustomerRequest $request)
     {
         $this->customerSer->store($request);
         return redirect()->route('customer.index');
