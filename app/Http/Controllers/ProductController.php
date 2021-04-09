@@ -31,10 +31,10 @@ class ProductController extends Controller
 
     public function getById($id)
     {
-        $products = $this->productSer->getAll();
+        $items = $this->productSer->getAll();
         $product= $this->productSer->getById($id);
 
-        return view('frontend.product_detail.detail',compact('products','product'));
+        return view('frontend.product_detail.detail',compact('items','product'));
 
     }
 

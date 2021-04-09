@@ -80,6 +80,8 @@
                                     <span><a href="{{ route('cart.delete') }}" class="btn btn-danger">Delete Cart</a></span>
                                 </div>
                             </form>
+
+                            <p>I dont know why</p>
                     </div>
                 </div>
             </div>

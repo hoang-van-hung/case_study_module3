@@ -11,16 +11,14 @@
                 </div>
             </div>
 
-            <h2><a href="">{{ $product->name }}</a></h2>
+            <h2><a href="{{route('product.detail',$product->id)}}">{{ $product->name }}</a></h2>
 
             <div class="product-carousel-price">
                 <del>$10000</del>
-                <ins>${{ number_format($product->price, 0, '.','.') }}</ins>
+                <ins>${{ number_format($product->price, 0) }}</ins>
 
             </div>
         </div>
     @endforeach
-
-
 @endsection
 

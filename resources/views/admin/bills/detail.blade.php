@@ -50,7 +50,7 @@
                             <td>{{ $bill->customer_name }}</td>
                             <td>{{ $bill->address }}</td>
                             <td>{{ $bill->phone }}</td>
-                            <td>{{ $bill->status_name }}</td>
+                            <td>{{ $bill->email }}</td>
                             <td>
                                 <a class="btn btn-primary" href=""><i class="fas fa-pencil-alt"></i></a>
                                 <a onclick="return confirm('Are you sure delete bill of {{ $bill->customer_name }}')"

@@ -50,7 +50,7 @@
                         <input type="text" name="price" class="form-control">
                     </div>
                     <div class="form-group col col-md-4">
-                        <label>Image</label> <br>
+                        <label>Image</label>
                         <input type="file" accept="image/*" onchange="loadFile(event)" name="image">
                     </div>
                     <div class="form-group col col-md-4">

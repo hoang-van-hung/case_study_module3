@@ -33,7 +33,7 @@
                     <tbody>
                     @foreach($bills as $key => $bill)
                         <tr>
-                            <td><a href="{{route('bill.detail',$bill->id)}}">MD-{{ $key + $bills->firstItem()}}</a></td>
+                            <td><a href="{{route('bills.detail',$bill->id)}}">MD-{{ $key + $bills->firstItem()}}</a></td>
                             <td>{{ $bill->customer_name }}</td>
 
                             <td>

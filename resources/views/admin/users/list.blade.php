@@ -9,6 +9,17 @@
         <div class="card-header">
             <a href="{{route('users.create')}}" class="btn btn-success float-right m-3">ADD USER</a>
         </div>
+        @if( session('success'))
+            <div class="alert alert-success">
+                {{session('success')}}
+            </div>
+        @endif
+
+        @if( session('fail'))
+            <div class="alert alert-success">
+                {{session('fail')}}
+            </div>
+        @endif
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

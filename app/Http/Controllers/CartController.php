@@ -33,6 +33,7 @@ class CartController extends Controller
         $newCart = new Cart($oldCart);
         $newCart->addProduct($product);
         session()->put('cart', $newCart);
+        toastSuccess('Add to Cart successfully');
         return back();
     }
 
@@ -64,13 +65,14 @@ class CartController extends Controller
             $newCart->updateCart($key, $value);
             session()->put('cart', $newCart);
         }
-
+        toastSuccess('Add to Cart successfully');
         return back();
     }
 
     function deleteCart()
     {
         session()->forget('cart');
+        toastInfo('Delete cart success');
         return redirect('/');
     }
 
@@ -107,6 +109,7 @@ class CartController extends Controller
             }
 
             DB::commit();
+            toastSuccess('Your order is ordering !Thanks for your order');
             session()->forget('cart');
             return redirect('/');
         }catch (\Exception $exception){
@@ -118,6 +121,7 @@ class CartController extends Controller
 
     function updateProduct(Request $request) {
         $idProduct = $request->idProduct;
+
         return response()->json();
     }
 }

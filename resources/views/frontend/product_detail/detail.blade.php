@@ -17,12 +17,12 @@
                     <div class="single-sidebar">
 
                         <h2 class="sidebar-title">Anothe Product</h2>
-                        @foreach($products as $product)
+                        @foreach($items as $item)
                         <div class="thubmnail-recent">
-                            <img src="{{ asset('storage/' .$product->img) }}" class="recent-thumb" alt="">
-                            <h2><a href="{{route('product.detail',$product->id)}}">{{$product->name}}</a></h2>
+                            <img src="{{ asset('storage/' .$item->img) }}" class="recent-thumb" alt="">
+                            <h2><a href="{{route('product.detail',$item->id)}}">{{$item->name}}</a></h2>
                             <div class="product-sidebar-price">
-                                <ins>{{$product->price}}</ins> <del>$100.00</del>
+                                <ins>{{$item->price}}</ins> <del>$100.00</del>
                             </div>
                         </div>
                         @endforeach
@@ -70,7 +70,8 @@
                                         <div class="quantity">
                                             <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
                                         </div>
-                                        <button class="add_to_cart_button" type="submit">Add to cart</button>
+                                        <a href="{{ route('cart.addToCart', $product->id) }}" class="add_to_cart_button"><i
+                                                class="fa fa-shopping-cart"></i> Add to cart</a>
                                     </form>
 
 
@@ -115,20 +116,20 @@
                         <div class="related-products-wrapper">
                             <h2 class="related-products-title">Related Products</h2>
                             <div class="related-products-carousel">
-                                @foreach($products as $product)
+                                @foreach($items as $item)
                                 <div class="single-product">
                                     <div class="product-f-image">
-                                        <img src="{{asset('storage/'.$product->img)}}" >
+                                        <img src="{{asset('storage/'.$item->img)}}" >
                                         <div class="product-hover">
                                             <a href="" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                             <a href="" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                         </div>
                                     </div>
 
-                                    <h2><a href="{{route('product.detail',$product->id)}}">{{$product->name}}</a></h2>
+                                    <h2><a href="{{route('product.detail',$item->id)}}">{{$item->name}}</a></h2>
 
                                     <div class="product-carousel-price">
-                                        <ins>{{$product->price}}</ins> <del>$100.00</del>
+                                        <ins>{{$item->price}}</ins> <del>$100.00</del>
                                     </div>
                                 </div>
                                 @endforeach

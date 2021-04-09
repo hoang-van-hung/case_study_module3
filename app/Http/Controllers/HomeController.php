@@ -34,7 +34,7 @@ class HomeController extends Controller
 
     function admin() {
         if (Gate::allows('isAdmin')) {
-            return view('layouts.core.home');
+            return redirect('/admin/bills');
         }else {
             abort(403);
         }

@@ -12,7 +12,7 @@ class ProductRepository
 {
     function getAll()
     {
-        return Product::orderBy('id','DESC')->paginate(3);
+        return Product::orderBy('id','DESC')->paginate(8);
     }
 
     function getById($id)

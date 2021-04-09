@@ -2,6 +2,11 @@
 @section('page_title')
     Them khach hang
 @endsection
+@if( session('success'))
+    <div class="alert alert-success">
+        {{session('success')}}
+    </div>
+@endif
 @section('content')
     {{--    @include('layouts.core.navbar')--}}
 
